@@ -6,10 +6,10 @@
     border: 1px solid #fff;
     border-radius: 1rem;
     transition: .25s;
+    overflow: hidden; /* Adiciona esta linha para garantir que o conteúdo não seja visível */
 }
 
-.acordeon.open,
-.acordeon:hover {
+.acordeon.open {
     background-color: #55569E;
     border-color: #55569E;
 }
@@ -53,14 +53,12 @@
 }
 
 .acordeon .content {
-    overflow: hidden;
     height: 0;
     opacity: 0;
-    transition: opacity .25s ease-in-out;
+    transition: opacity .25s ease-in-out, height .25s ease-in-out;
 }
 
 .acordeon.open .content {
-    display: block;
     padding: 0 1rem 1rem 2rem;
     height: auto;
     opacity: 1;
